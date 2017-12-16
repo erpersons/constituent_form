@@ -1,0 +1,27 @@
+{
+  "name": "constituent_form",
+  "version": "1.0.0",
+  "description": "Code Challenge for MN Senate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erpersons/constituent_form.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erpersons/constituent_form/issues"
+  },
+  "homepage": "https://github.com/erpersons/constituent_form#readme",
+  "dependencies": {
+    "angular": "^1.6.7",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "node": "^9.3.0",
+    "path": "^0.12.7"
+  }
+}
