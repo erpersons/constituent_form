@@ -4,7 +4,8 @@
   "description": "Code Challenge for MN Senate",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,11 @@
   "homepage": "https://github.com/erpersons/constituent_form#readme",
   "dependencies": {
     "angular": "^1.6.7",
+    "angular-animate": "^1.6.7",
+    "angular-aria": "^1.6.7",
+    "angular-material": "^1.1.5",
+    "angular-messages": "^1.6.7",
+    "angular-route": "^1.6.7",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "node": "^9.3.0",
