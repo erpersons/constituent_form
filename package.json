@@ -27,7 +27,9 @@
     "angular-route": "^1.6.7",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "mongoose": "^4.13.7",
     "node": "^9.3.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "request": "^2.83.0"
   }
 }
