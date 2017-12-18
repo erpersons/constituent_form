@@ -23,7 +23,39 @@
 </head>
 
 <body>
-    Constituent Please Fill in Form
+    Constituent, Please Select Senator & Fill in Form
+
+    <!-- select -->
+<!-- <div ng-app="myApp" ng-controller="myCtrl">
+
+    <select ng-model="selectedName" ng-options="x for x in names">
+    </select>
+
+</div> -->
+    <!-- form -->
+    <form novalidate>
+        E-mail:
+        <input type="email" name="user_email">
+    </form>
+    <!-- lifted -->
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <select placeholdere="select Senator" ng-model="selectedName" ng-options="x for x in names">
+<option value="" selected="selected">Select Senator</option>
+    </select>
+
+</div>
+
+<script>
+    //client.js
+    var app = angular.module('myApp', []);
+    //controller??
+    app.controller('myCtrl', function ($scope) {
+        $scope.names = ["Dan Hall", "Melissa Franzen", "Kent Eken"];
+    });
+</script>
+
+<p>This example shows how to fill a dropdown list using the ng-options directive.</p>
 </body>
 
 </html>
