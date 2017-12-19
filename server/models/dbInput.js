@@ -14,4 +14,5 @@ var constituentSchema = new Schema({
     
 })
 
-module.exports = Foods;
+var Info = mongoose.model('constituentSchema', constituentSchema);
+module.exports = Info;
