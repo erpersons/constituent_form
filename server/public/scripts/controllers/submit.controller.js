@@ -1,9 +1,9 @@
-myApp.controller('SubmitController', function (SubmitService, $http) { 
+myApp.controller('SubmitController', function (SubmitService, $http) {
     console.log('SubmitController created');
     var vm = this;
     vm.submitService = SubmitService;
 
-    vm.clearInput = function (){
+    vm.clearInput = function () {
         vm.senatorIn = '';
         vm.districtIn = '';
         vm.nameIn = '';
@@ -13,7 +13,7 @@ myApp.controller('SubmitController', function (SubmitService, $http) {
         vm.humanIn = '';
     }; //end clearInput func
 
-    vm.submit = function() {
+    vm.submit = function () {
         console.log('in vm.submit func')
         vm.infoMess = {
             senator: vm.senatorIn,
@@ -24,17 +24,17 @@ myApp.controller('SubmitController', function (SubmitService, $http) {
             message: vm.messageIn,
             human: true
         }; //end submit func
-        console.log('vm.infoMess ----->', vm.infoMess );
+        console.log('vm.infoMess ----->', vm.infoMess);
         $http({
             method: 'POST',
             url: '/submit-route',
             data: vm.infoMess
         }) //end POST
         vm.clearInput();
-    }  //end submit func 
+    } //end submit func 
 
     //--------------------//
-//an alert upon Submit
+    //an alert upon Submit
     // vm.tyAlert = function () {
 
     // } //end tyAlert func
