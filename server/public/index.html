@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link href="../justice_scales 2.png" rel="icon" type="image/x-icon" />
+    <link href="./justice_scales 2.ico" rel="icon" type="image/x-icon" />
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,39 +23,34 @@
 </head>
 
 <body>
-    Constituent, Please Select Senator & Fill in Form
+    Constituent, please select your Senator OR District, fill in personal information, and type an email to your senator.
 
-    <!-- select -->
-<!-- <div ng-app="myApp" ng-controller="myCtrl">
-
-    <select ng-model="selectedName" ng-options="x for x in names">
+    <select>
+        <option value="" selected="selected">Select Senator</option>
     </select>
-
-</div> -->
+    <p>OR</p>
+    <select>
+        <option value="" selected="selected">Select District</option>
+    </select>
+    <p>Your information...</p>
     <!-- form -->
     <form novalidate>
-        E-mail:
+        Name:
+        <input type="name" name="user_name">
+        <br> Mailing Address:
+        <input type "address" name="user_address">
+        <br> E-mail Address:
         <input type="email" name="user_email">
+        <br> Message for your Senator:
+        <input type="message" name="user_message">
+        <br> Check the box to prove you're a human voter:
+        <input type="checkbox">
+        <br>
+        <button ng-click="sc.submit()">Submit</button>
     </form>
-    <!-- lifted -->
-<div ng-app="myApp" ng-controller="myCtrl">
+    </div>
 
-    <select placeholdere="select Senator" ng-model="selectedName" ng-options="x for x in names">
-<option value="" selected="selected">Select Senator</option>
-    </select>
 
-</div>
-
-<script>
-    //client.js
-    var app = angular.module('myApp', []);
-    //controller??
-    app.controller('myCtrl', function ($scope) {
-        $scope.names = ["Dan Hall", "Melissa Franzen", "Kent Eken"];
-    });
-</script>
-
-<p>This example shows how to fill a dropdown list using the ng-options directive.</p>
 </body>
 
 </html>
