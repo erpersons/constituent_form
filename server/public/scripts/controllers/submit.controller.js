@@ -1,9 +1,11 @@
-myApp.controller('SubmitController', function (SubmitService, $http){
+myApp.controller('SubmitController', function (SubmitService, $http) { 
     console.log('SubmitController created');
     var vm = this;
     vm.submitService = SubmitService;
 
     vm.clearInput = function (){
+        vm.senatorIn = '';
+        vm.districtIn = '';
         vm.nameIn = '';
         vm.addressIn = '';
         vm.emailIn = '';
@@ -12,12 +14,15 @@ myApp.controller('SubmitController', function (SubmitService, $http){
     }; //end clearInput func
 
     vm.submit = function() {
+        console.log('in vm.submit func')
         vm.infoMess = {
+            senator: vm.senatorIn,
+            district: vm.districtIn,
             name: vm.nameIn,
             address: vm.addressIn,
             email: vm.emailIn,
             message: vm.messageIn,
-            human: true
+            human: humanIn
         }; //end submit func
         console.log('vm.infoMess ----->', vm.infoMess );
         $http({
@@ -27,7 +32,11 @@ myApp.controller('SubmitController', function (SubmitService, $http){
         }) //end POST
         vm.clearInput();
     }  //end submit func 
-    vm.tyAlert = function () {
 
-    } //end tyAlert func
+    //--------------------//
+//an alert upon Submit
+    // vm.tyAlert = function () {
+
+    // } //end tyAlert func
+
 }); //myApp.controller end

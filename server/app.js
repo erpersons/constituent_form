@@ -7,13 +7,15 @@ var path = require('path');
 var db = require('./modules/db.config.js');
 
 //route includes
-var submitRouter = require('./routes/submit-route')
+var submitRouter = require('./routes/submit-route');
+var indexRouter = require('./routes/index.router');
 
 app.use(bodyParser.json());
 app.use(express.static('server/public')); 
 
 //routes
 app.use('/submit-route', submitRouter);
+app.use('/', indexRouter); //must be last
 
 app.listen(port, function () {
     console.log('server up on:', port);

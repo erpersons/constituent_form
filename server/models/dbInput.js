@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var express = require('express');
+mongoose.connect('localhost:27017/Senate');
 
 var constituentSchema = new Schema({
     name: String,

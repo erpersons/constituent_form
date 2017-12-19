@@ -9,24 +9,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Constituent Contact Form</title>
 
-    <script type="text/javascript" src="vendors/angular/angular.min.js">
-    </script>
+    <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
     <script type="text/javascript" src="vendors/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="vendors/angular-animate/angular-animate.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="vendors/angular-aria/angular-aria.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="vendors/angular-messages/angular-messages.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="vendors/angular-material/angular-material.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="scripts/client.js"></script>
+    <script src="scripts/controllers/submit.controller.js"></script>
+    <script src="scripts/services/submit.service.js"></script>
 
     <link href="vendors/angular-material/angular-material.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="styles/styles.css">
 
 </head>
 
-<body>
+<body ng-app="myApp">
     Constituent, please select your Senator OR District, fill in personal information, and type an email to your senator.
 
     <select>
-        <option value="" selected="selected">Select Senator</option>
+        <option ng-repeat="x in senators">{{x}}</option>
     </select>
     <p>OR</p>
     <select>
@@ -35,8 +37,7 @@
     <p>Your information...</p>
     <!-- form -->
     <form novalidate>
-        Name:
-        <input class="nameIn" type="name" name="user_name">
+        Name:<input class="nameIn" type="name" name="user_name">
         <br> Mailing Address:
         <input class="addressIn" type "address" name="user_address">
         <br> E-mail Address:
@@ -46,7 +47,7 @@
         <br> Check the box to prove you're a human voter:
         <input class="humanIn" type="checkbox">
         <br>
-        <button ng-click="sc.submit()">Submit</button>
+        <button ng-click="SubmitController.submit()">Submit</button>
     </form>
     </div>
 

@@ -26,3 +26,25 @@ mongoDB.once('open', function () {
 });
 
 module.exports = mongoDB;
+
+// var express = require('express');
+// var app = express();
+// var mongoose = require('mongoose');
+
+// mongoose.connect('localhost:27017/Senate');
+
+// var Schema = mongoose.Schema;
+
+// var senateSchema = new Schema ({
+//     name: String,
+//     email: String,
+//     address: String,
+//     message: String,
+//     checkBox: Boolean,
+//     senator: String,
+//     district: String
+// });
+
+// var constituent = mongoose.model('Constituents', senateSchema);
+
+// module.exports = constituent;
