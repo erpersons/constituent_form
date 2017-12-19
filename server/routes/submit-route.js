@@ -9,10 +9,9 @@ router.post('/', function (req, res){
     var newInfoMess = new infoMessCollection({
         name: req.body.name,
         email: req.body.email,
-        phoneNumber: req.body.phoneNumber,
         address: req.body.address,
         message: req.body.message,
-        checkBox: req.body.checkBox,
+        human: req.body.human,
         senator: req.body.senator,
         district: req.body.district
     }); //end newInfoMess

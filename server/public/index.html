@@ -36,15 +36,15 @@
     <!-- form -->
     <form novalidate>
         Name:
-        <input type="name" name="user_name">
+        <input class="nameIn" type="name" name="user_name">
         <br> Mailing Address:
-        <input type "address" name="user_address">
+        <input class="addressIn" type "address" name="user_address">
         <br> E-mail Address:
-        <input type="email" name="user_email">
+        <input class="emailIn" type="email" name="user_email">
         <br> Message for your Senator:
-        <input type="message" name="user_message">
+        <input class="messageIn" type="message" name="user_message">
         <br> Check the box to prove you're a human voter:
-        <input type="checkbox">
+        <input class="humanIn" type="checkbox">
         <br>
         <button ng-click="sc.submit()">Submit</button>
     </form>

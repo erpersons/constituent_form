@@ -16,10 +16,10 @@ myApp.controller('SubmitController', function (SubmitService, $http){
             name: vm.nameIn,
             address: vm.addressIn,
             email: vm.emailIn,
-            message: vm.emailIn,
-            human: vm.humanIn
+            message: vm.messageIn,
+            human: true
         }; //end submit func
-        console.log('infoMess ----->', vm.infoMess );
+        console.log('vm.infoMess ----->', vm.infoMess );
         $http({
             method: 'POST',
             url: '/submit-route',
