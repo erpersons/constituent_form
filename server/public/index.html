@@ -24,7 +24,7 @@
 
 </head>
 
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="SubmitController as sc">
     Constituent, please select your Senator OR District, fill in personal information, and type an email to your senator.
 
     <select>
@@ -37,7 +37,8 @@
     <p>Your information...</p>
     <!-- form -->
     <form novalidate>
-        Name:<input class="nameIn" type="name" name="user_name">
+        Name:
+        <input class="nameIn" type="name" name="user_name">
         <br> Mailing Address:
         <input class="addressIn" type "address" name="user_address">
         <br> E-mail Address:
@@ -47,7 +48,7 @@
         <br> Check the box to prove you're a human voter:
         <input class="humanIn" type="checkbox">
         <br>
-        <button ng-click="SubmitController.submit()">Submit</button>
+        <button ng-click="sc.submit()">Submit</button>
     </form>
     </div>
 

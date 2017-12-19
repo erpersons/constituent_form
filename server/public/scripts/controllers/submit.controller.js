@@ -22,7 +22,7 @@ myApp.controller('SubmitController', function (SubmitService, $http) {
             address: vm.addressIn,
             email: vm.emailIn,
             message: vm.messageIn,
-            human: humanIn
+            human: true
         }; //end submit func
         console.log('vm.infoMess ----->', vm.infoMess );
         $http({
