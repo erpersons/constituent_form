@@ -1,7 +1,8 @@
 myApp.controller('SubmitController', function (SubmitService, $http) {
     console.log('SubmitController created');
     var vm = this;
-    vm.submitService = SubmitService;
+    vm.sensList = SubmitService.senators;
+    vm.distsList = SubmitService.districts;
 
     vm.clearInput = function () {
         vm.senatorIn = '';
@@ -32,6 +33,17 @@ myApp.controller('SubmitController', function (SubmitService, $http) {
         }) //end POST
         vm.clearInput();
     } //end submit func 
+
+    vm.getSens = function () {
+        console.log('in vm.getSens func');
+        SubmitService.getSens();
+    } //end getSens func
+
+    vm.getDists = function () {
+        console.log('in vm.getDists func');
+        SubmitService.getDists();
+    } //end getDists func
+
 
     //--------------------//
     //an alert upon Submit

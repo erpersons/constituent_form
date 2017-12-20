@@ -26,19 +26,26 @@
 
 <body ng-app="myApp" ng-controller="SubmitController as sc">
     Constituent, please select your Senator or District, fill in personal information, and type an email to your senator.
-<br>
-    
+    <br>
+
     <p>Your information...</p>
     <!-- form -->
     <form novalidate>
         <label for="Senator">Senator</label>
-        <input id="Senator" type="radio" name="content" ng-model="content" value="Senator">
+        <input id="Senator" type="radio" name="content" ng-model="content" value="Senator" ng-change="sc.getSens()">
         <br>
         <label for="District">District</label>
-        <input id="District" type="radio" name="content" ng-model="content" value="District">
+        <input id="District" type="radio" name="content" ng-model="content" value="District" ng-change="sc.getDists()">
         <br>
         <div class="wrapper">
-            <select ng-show="content == 'Senator'"></select>
+            <!-- <select ng-show="content == 'Senator'"></select>  -->
+            
+                <select ng-model="selectedSen" ng-show="content == 'Senator'">
+                    <option ng-repeat="i in sc.sensList.data" value="{{i.senName}}">{{i.senName}}</option>
+                </select>
+                <!-- <h1>You selected: {{selectedSen}}</h1> -->
+
+            <!-- ----------- -->
             <select ng-show="content == 'District'"></select>
         </div>
         Name:
@@ -52,7 +59,7 @@
         <br> Check the box to prove you're a human voter:
         <input ng-model="sc.humanIn" type="checkbox">
         <br>
-        <button ng-click="sc.submit()">Submit</button>
+        <button ng-click="sc.submit();" ng-click="sc.getSenDist();">Submit</button>
     </form>
     </div>
 
