@@ -6,7 +6,7 @@ var Info = require('../models/dbInput.js')
 router.get('/', function (req, res) {
     console.log('GET senators route hit!');
 
-    Info.find({name: { $exists: true } }, function (err, Obj) {
+    Info.find({senName: { $exists: true } }, function (err, Obj) {
         if (err) {
             res.sendStatus(500);
             console.log('senGet-route error', err);

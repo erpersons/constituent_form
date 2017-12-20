@@ -17,9 +17,9 @@ app.use(express.static('server/public'));
 
 //routes
 app.use('/submit-route', submitRouter);
-app.use('/', indexRouter); //must be last
 app.use('/senGet-route', senRouter);
 app.use('/distGet-route', distRouter);
+app.use('/', indexRouter); //must be last
 
 app.listen(port, function () {
     console.log('server up on:', port);
