@@ -1,17 +1,16 @@
 var mongoose = require('mongoose');
 
-// Mongo Connection //
+// Mongo Connection
 var mongoURI = '';
-// process.env.MONGODB_URI will only be defined if you are running on Heroku
+
 if (process.env.MONGODB_URI != undefined) {
-    // use the string value of the environment variable
+    // no .env
     mongoURI = process.env.MONGODB_URI;
 } else {
-    // use the local database server
+    
     mongoURI = 'mongodb://localhost:27017/Senate';
 }
 
-// var mongoURI = "mongodb://localhost:27017/passport";
 var mongoDB = mongoose.connect(mongoURI).connection;
 
 mongoDB.on('error', function (err) {
@@ -26,25 +25,3 @@ mongoDB.once('open', function () {
 });
 
 module.exports = mongoDB;
-
-// var express = require('express');
-// var app = express();
-// var mongoose = require('mongoose');
-
-// mongoose.connect('localhost:27017/Senate');
-
-// var Schema = mongoose.Schema;
-
-// var senateSchema = new Schema ({
-//     name: String,
-//     email: String,
-//     address: String,
-//     message: String,
-//     checkBox: Boolean,
-//     senator: String,
-//     district: String
-// });
-
-// var constituent = mongoose.model('Constituents', senateSchema);
-
-// module.exports = constituent;

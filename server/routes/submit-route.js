@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 router.post('/', function (req, res){
     console.log('in router.post')
     console.log(req.body);
-    var newInfoMess = new infoMessCollection.const({
+    var newInfoMess = new infoMessCollection({ //.const ??
         name: req.body.name,
         email: req.body.email,
         address: req.body.address,
