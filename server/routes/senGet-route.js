@@ -6,7 +6,7 @@ var Info = require('../models/dbInput.js');
 router.get('/', function (req, res) {
     console.log('GET senators route hit!');
 
-    Info.find({ senName: { $exists: true }}, function (err, Obj) {  // Obj.sens ?? error: Obj.save not a function
+    Info.find({ senName: { $exists: true }}, function (err, Obj) {  //shouldn't be Info
         if (err) {
             res.sendStatus(500);
             console.log('senGet-route error', err);
