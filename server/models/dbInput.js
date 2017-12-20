@@ -11,9 +11,19 @@ var constituentSchema = new Schema({
     checkBox: Boolean,
     senator: String,
     district: String
-
-    
 })
 
-var Info = mongoose.model('constituentSchema', constituentSchema);
-module.exports = Info;
+var senSchema = new Schema({
+    senName: String,
+    email: String
+}) //not working
+
+var distSchema = new Schema({
+    dist: Number,
+    email: String
+}) //not working
+
+var senSchema = mongoose.model('Senator', senSchema);
+var Info = mongoose.model('constituentschema', constituentSchema);
+// module.exports = Info;
+module.exports = {const: Info, sens: senSchema}

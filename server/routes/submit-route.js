@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 router.post('/', function (req, res){
     console.log('in router.post')
     console.log(req.body);
-    var newInfoMess = new infoMessCollection({
+    var newInfoMess = new infoMessCollection.const({
         name: req.body.name,
         email: req.body.email,
         address: req.body.address,
@@ -26,11 +26,4 @@ router.post('/', function (req, res){
         }
     })
 }); //end router.post
-
-router.get('/', function (req, res) {
-    infoMessCollection.then(function (stuff) {
-        console.log('stuff', stuff);
-        res.send(stuff);
-    });
-}); //end router.get
 module.exports = router;

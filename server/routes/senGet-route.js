@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
-var Info = require('../models/dbInput.js')
+var Obj = require('../models/dbInput.js');
 
 router.get('/', function (req, res) {
     console.log('GET senators route hit!');
 
-    Info.find({senName: { $exists: true } }, function (err, Obj) {
+    Obj.sens.save({senName: 'gloria', email: 'email@email.com'}, function (err, Obj) {  // senName: { $exists: true }
         if (err) {
             res.sendStatus(500);
             console.log('senGet-route error', err);

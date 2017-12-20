@@ -12,6 +12,8 @@ myApp.service('SubmitService', function($http) {
 
         }).then (function(resp){
             self.senators.data = resp.data
+            console.log(resp.data);
+            console.log(self.senators.data);
         });
     }
 
@@ -24,6 +26,7 @@ myApp.service('SubmitService', function($http) {
             url: '/distGet-route'
         }).then (function(resp){
             self.districts.data = resp.data
+            console.log(resp.data);
         });
     }
 }); //end myApp.service

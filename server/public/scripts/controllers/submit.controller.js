@@ -32,6 +32,7 @@ myApp.controller('SubmitController', function (SubmitService, $http) {
             data: vm.infoMess
         }) //end POST
         vm.clearInput();
+        vm.tyAlert();
     } //end submit func 
 
     vm.getSens = function () {
@@ -45,10 +46,8 @@ myApp.controller('SubmitController', function (SubmitService, $http) {
     } //end getDists func
 
 
-    //--------------------//
-    //an alert upon Submit
-    // vm.tyAlert = function () {
-
-    // } //end tyAlert func
+    vm.tyAlert = function () {
+        alert("Thank you for contacting your Senator!");
+    } //end tyAlert func
 
 }); //myApp.controller end
