@@ -25,18 +25,22 @@
 </head>
 
 <body ng-app="myApp" ng-controller="SubmitController as sc">
-    Constituent, please select your Senator OR District, fill in personal information, and type an email to your senator.
-
-    <select>
-        <option ng-repeat="x in senators">{{x}}</option>
-    </select>
-    <p>OR</p>
-    <select>
-        <option value="" selected="selected">Select District</option>
-    </select>
+    Constituent, please select your Senator or District, fill in personal information, and type an email to your senator.
+<br>
+    
     <p>Your information...</p>
     <!-- form -->
     <form novalidate>
+        <label for="Senator">Senator</label>
+        <input id="Senator" type="radio" name="content" ng-model="content" value="Senator">
+        <br>
+        <label for="District">District</label>
+        <input id="District" type="radio" name="content" ng-model="content" value="District">
+        <br>
+        <div class="wrapper">
+            <select ng-show="content == 'Senator'"></select>
+            <select ng-show="content == 'District'"></select>
+        </div>
         Name:
         <input ng-model="sc.nameIn" type="name">
         <br> Mailing Address:
