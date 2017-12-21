@@ -37,8 +37,8 @@
         <label for="District">District</label>
         <input id="District" type="radio" name="content" ng-model="content" value="District" ng-change="sc.getDists()">
         <br>
+        <!-- ^^These radio buttons would trigger a PUT (as well as the GET) to establish which senator to email -->
         <div class="wrapper">
-            <!-- <select ng-show="content == 'Senator'"></select>  -->
             
                 <select ng-model="selectedSen" ng-show="content == 'Senator'">
                     <option ng-repeat="i in sc.sensList.data" value="{{i.senName}}">{{i.senName}}</option>
@@ -47,6 +47,7 @@
 
             <select ng-show="content == 'District'"></select>
         </div>
+        <!-- Would make fields inactive until user selects senator or district -->
         Name:
         <input ng-model="sc.nameIn" type="name">
         <br> Mailing Address:

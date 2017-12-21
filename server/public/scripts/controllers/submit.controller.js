@@ -38,11 +38,13 @@ myApp.controller('SubmitController', function (SubmitService, $http) {
     vm.getSens = function () {
         console.log('in vm.getSens func');
         SubmitService.getSens();
+        // SubmitService.putEmail();  ----> the PUT
     } //end getSens func
 
     vm.getDists = function () {
         console.log('in vm.getDists func');
         SubmitService.getDists();
+        // SubmitService.putEmail();  ----> the PUT
     } //end getDists func
 
 

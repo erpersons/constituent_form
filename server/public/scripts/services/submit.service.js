@@ -17,6 +17,15 @@ myApp.service('SubmitService', function ($http) {
         });
     }
 
+    // self.putEmail = function () { ------->would need a PUT route
+    //     $http({
+    //         method: 'PUT',
+    //         url: '/putEmail-route'
+    //     }).then(function (resp) {
+    //         self.senators.data.email = resp.data
+    //     })
+    // }
+    
     self.districts = {
         data: []
     };

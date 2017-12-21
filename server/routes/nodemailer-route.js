@@ -1,3 +1,4 @@
+// would make nodemailer run on Submit button click, instead of page load
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
