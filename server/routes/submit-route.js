@@ -2,7 +2,7 @@ var express = require('express');
 var router = require('express').Router();
 var path = require('path');
 var mongoose = require('mongoose');
-var  infoMessCollection = require('../models/dbInput.js').Constituents
+var infoMessCollection = require('../models/dbInput.js').Constituents
 var bodyParser = require('body-parser');
 
 router.post('/', function (req, res){

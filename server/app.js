@@ -11,6 +11,7 @@ var submitRouter = require('./routes/submit-route');
 var indexRouter = require('./routes/index.router');
 var senRouter = require('./routes/senGet-route');
 var distRouter = require('./routes/distGet-route');
+var nodemailerRouter = require('./routes/nodemailer-route');
 
 app.use(bodyParser.json());
 app.use(express.static('server/public')); 
@@ -19,6 +20,7 @@ app.use(express.static('server/public'));
 app.use('/submit-route', submitRouter);
 app.use('/senGet-route', senRouter);
 app.use('/distGet-route', distRouter);
+app.use('/nodemailer-route', nodemailerRouter);
 app.use('/', indexRouter); //must be last
 
 app.listen(port, function () {

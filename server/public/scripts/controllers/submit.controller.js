@@ -51,3 +51,5 @@ myApp.controller('SubmitController', function (SubmitService, $http) {
     } //end tyAlert func
 
 }); //myApp.controller end
+
+module.exports = router;

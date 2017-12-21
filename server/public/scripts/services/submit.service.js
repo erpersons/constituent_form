@@ -28,7 +28,7 @@ myApp.service('SubmitService', function ($http) {
             url: '/distGet-route'
         }).then(function (resp) {
             self.districts.data = resp.data
-            console.log(resp.data); //logging array of an empty constituent object, without checkbox data
+            console.log(resp.data); //logging empty array
         });
     }
 }); //end myApp.service
