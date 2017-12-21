@@ -52,4 +52,4 @@ myApp.controller('SubmitController', function (SubmitService, $http) {
 
 }); //myApp.controller end
 
-module.exports = router;
+// module.exports = router;
