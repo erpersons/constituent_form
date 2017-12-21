@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var express = require('express');
-mongoose.createConnection('localhost:27017/Senate');
+require('../modules/db.config.js');
 
 var constituentSchema = new Schema({
     name: String,
@@ -9,29 +9,27 @@ var constituentSchema = new Schema({
     address: String,
     message: String,
     checkBox: Boolean,
-    senator: String, //not sure how to pick either Senator OR District. a post?
+    senator: String,
     district: String
 })
 
 var senSchema = new Schema({
     senName: String,
     email: String
-}, {
-    collection: 'Senators'
-    }); // collection in the database would be Senator names and email addresses
-
-// mongoose.model('Senators', new Schema({ senName: String, email: String}), 'senators');
-
+}) // collection in the database would be Senator name and email address
 
 var distSchema = new Schema({
     dist: Number,
     email: String
-}); // collection in the database would be District #s and email addresses
+}) // collection in the database would be District # and email address
 
-// mongoose.model('senators', new Schema({senName: String, email: String}), 'Senators');
+var senators = mongoose.model('Senator', senSchema); //mongo will pluralize Senator
+var districts = mongoose.model('District', distSchema); //mongo will pluralize District
+var constituents = mongoose.model('Constituent', constituentSchema);
 
-
-var senSchema = mongoose.model('Senator', senSchema); //mongo will pluralize Senator
-var distSchema = mongoose.model('District', distSchema); //mongo will pluralize District
-var Info = mongoose.model('constituentschema', constituentSchema);
-module.exports = Info;
+// export models object
+module.exports = {
+    Senators: senators,
+    Districts: districts,
+    Constituents: constituents
+};

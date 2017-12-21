@@ -30,6 +30,7 @@
     "mongodb": "^3.0.0-rc0",
     "mongoose": "^4.13.7",
     "node": "^9.3.0",
+    "nodemailer": "^4.4.1",
     "path": "^0.12.7",
     "request": "^2.83.0"
   }

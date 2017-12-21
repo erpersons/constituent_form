@@ -43,7 +43,7 @@
                 <select ng-model="selectedSen" ng-show="content == 'Senator'">
                     <option ng-repeat="i in sc.sensList.data" value="{{i.senName}}">{{i.senName}}</option>
                 </select>
-                <!-- ^^experimenting not working; nothing from GET -->
+                <!-- ^^this would repeat over the list of senators, likewise with district dropdown -->
 
             <select ng-show="content == 'District'"></select>
         </div>
